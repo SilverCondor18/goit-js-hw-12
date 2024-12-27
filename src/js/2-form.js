@@ -43,6 +43,12 @@ const formInputHandler = (event) => {
 
 const formSubmitHandler = (event) => {
     event.preventDefault();
+    const { email, message } = formData;
+    if (email == "" || message == "")
+    {
+        alert("Fill please all fields");
+        return;
+    }
     console.log(formData);
     localStorage.removeItem(formDataKey);
     formData = {
