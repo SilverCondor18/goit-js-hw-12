@@ -112,16 +112,3 @@ body
 {
   border-color: #000000;
 }
-
-.gallery-form-links
-{
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.gallery-form-link
-{
-  text-decoration: underline;
-  color: #000000;
-}
