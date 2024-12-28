@@ -113,13 +113,36 @@ body
   border-color: #000000;
 }
 
-.gallery-form-links {
+.nav
+{
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.gallery-form-link {
-  text-decoration: underline;
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.nav-item
+{
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+
+.nav-link {
+  text-decoration: none;
   color: #000000;
+  display: block;
+  padding: 8px;
+  transition: color 250ms ease-in-out, background-color 250ms ease-in-out, transform 250ms ease-in-out;
+}
+
+.nav-link:hover, .nav-link:focus
+{
+  background-color: #000000;
+  color: #ffffff;
 }
