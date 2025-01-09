@@ -13,6 +13,7 @@ let selectedDate;
 const msgError = msg => {
   iziToast.error(
     {
+      title: "Error",
       message: msg,
       position: "topRight"
     }

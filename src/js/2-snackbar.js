@@ -5,6 +5,7 @@ const form = document.querySelector(".form");
 const msgError = msg => {
   iziToast.error(
     {
+      title: "Error",
       message: msg,
       position: "topRight"
     }
@@ -14,6 +15,7 @@ const msgError = msg => {
 const msgSuccess = msg => {
   iziToast.success(
     {
+      title: "OK",
       message: msg,
       position: "topRight"
     }
