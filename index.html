@@ -10,22 +10,23 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/styles-D_L7osZZ.css">
+    <script type="module" crossorigin src="/goit-js-hw-11/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-B07T6_gy.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/index-DyqvYmYL.css">
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <nav class="nav">
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a href="./1-timer.html" class="nav-link">Timer</a>
-            </li>
-            <li class="nav-item">
-              <a href="./2-snackbar.html" class="nav-link">SnackBar</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <div class="container">
+      <form class="search-form">
+        <input
+          class="query-text"
+          type="text"
+          placeholder="Search images..."
+          name="query"
+        />
+        <button type="submit">Search</button>
+      </form>
+      <div class="loader hidden-loader"></div>
+      <ul class="gallery"></ul>
+    </div>
   </body>
 </html>
