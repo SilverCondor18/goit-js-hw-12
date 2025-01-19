@@ -11,21 +11,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="main.js"></script>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <nav class="nav">
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a href="./1-timer.html" class="nav-link">Timer</a>
-            </li>
-            <li class="nav-item">
-              <a href="./2-snackbar.html" class="nav-link">SnackBar</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <div class="container">
+      <form class="search-form">
+        <input
+          class="query-text"
+          type="text"
+          placeholder="Search images..."
+          name="query"
+        />
+        <button type="submit">Search</button>
+      </form>
+      <div class="loader hidden-loader"></div>
+      <ul class="gallery"></ul>
+    </div>
   </body>
 </html>

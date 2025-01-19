@@ -1,5 +1,10 @@
-@import "flatpickr/dist/flatpickr.min.css";
 @import "izitoast/dist/css/iziToast.min.css";
+@import "simplelightbox/dist/simple-lightbox.min.css";
+
+*, *::before, *::after
+{
+  box-sizing: border-box;
+}
 
 ul,
 ol,
@@ -25,8 +30,15 @@ body
   color: #2e2f42;
 }
 
-input
+.container
 {
+  padding: 36px 156px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
   border-radius: 4px;
   padding: 8px 16px;
   border: 1px solid #808080;
@@ -39,28 +51,30 @@ input
   outline: none;
 }
 
-input:hover, input:focus
+.query-text
 {
+  width: 272px;
+}
+
+input:hover,
+input:focus {
   border-color: black;
 }
 
-input:active
-{
+input:active {
   border-color: #4e75ff;
   color: black;
 }
 
-input:disabled
-{
+input:disabled {
   border-color: #808080;
   background-color: #fafafa;
   color: #808080;
 }
 
-button
-{
+button {
   border-radius: 8px;
-  width: 75px;
+  width: 91px;
   background-color: #4e75ff;
   padding: 8px 16px;
   font-family: "Montserrat", sans-serif;
@@ -74,97 +88,131 @@ button
   transition: background-color 250ms ease-in-out;
 }
 
-button:hover, button:focus
-{
+button:hover,
+button:focus {
   background-color: #6c8cff;
 }
 
-button:disabled
-{
+button:disabled {
   color: #989898;
   background-color: #cfcfcf;
 }
 
-#datetime-picker
-{
-  width: 272px;
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #FFF #FFF transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
 }
 
-.timer-controls
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #FF3D00 #FF3D00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #FFF #FFF transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.gallery
 {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.gallery-item
+{
+  border: 1px solid #808080;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-img
+{
+  width: 100%;
+  height: auto;
+  margin-bottom: auto;
+}
+
+.user-activity
+{
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  padding: 4px 20px;
+}
+
+.user-activity-item
+{
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 2;
+  align-items: center;
+}
+
+.user-activity-header
+{
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.search-form
+{
+  display: flex;
+  flex-direction: row;
   gap: 8px;
   margin-bottom: 32px;
 }
 
-.timer
+.hidden-loader
 {
-  display: flex;
-  gap: 24px;
-}
-
-.field
-{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.value
-{
-  line-height: 120%;
-  font-size: 40px;
-}
-
-.label
-{
-  text-transform: uppercase;
-}
-
-.form
-{
-  width: 360px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.form label
-{
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form button
-{
-  width: 100%;
-}
-
-.form input[type="radio"]
-{
-  width: 20px;
-  height: 20px;
-}
-
-fieldset
-{
-  display: flex;
-  gap: 48px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  border: 1px solid #808080;
-}
-
-fieldset:hover, fieldset:focus-within
-{
-  border-color: black;
-}
-
-.form fieldset label
-{
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  display: none;
 }
