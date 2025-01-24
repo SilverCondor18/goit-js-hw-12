@@ -68,7 +68,11 @@ const loadMoreClickHandler = async event => {
         {
             const scrollHeight = gallery.lastChild.getBoundingClientRect().height * 2;
             gallery.insertAdjacentHTML("beforeend", galleryItems.join(''));
-            window.scrollBy(0, scrollHeight);
+            window.scrollBy({
+                top: scrollHeight,
+                left: 0,
+                behavior: "smooth"
+            });
             lightbox.refresh();
             if (galleryItems.length < 15)
             {
