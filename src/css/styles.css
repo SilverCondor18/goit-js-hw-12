@@ -88,6 +88,11 @@ button {
   transition: background-color 250ms ease-in-out;
 }
 
+.load-more
+{
+  width: 145px;
+}
+
 button:hover,
 button:focus {
   background-color: #6c8cff;
@@ -164,6 +169,7 @@ button:disabled {
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
+  margin-bottom: 32px;
 }
 
 .gallery-item
@@ -212,7 +218,7 @@ button:disabled {
   margin-bottom: 32px;
 }
 
-.hidden-loader
+.el-hidden
 {
   display: none;
 }
