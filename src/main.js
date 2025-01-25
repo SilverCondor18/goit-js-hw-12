@@ -31,7 +31,12 @@ const formSubmitHandler = async event => {
     currentQuery.page = 1;
     gallery.innerHTML = "";
     loader.classList.remove("el-hidden");
+    loadMore.classList.add("el-hidden");
     try {
+        if (query == "")
+        {
+            throw new Error("Search query input cannot be empty.");
+        }
         const queryResult = await searchImages(query, 1);
         const galleryItems = renderGallery(queryResult.data);
         currentQuery.totalHits = queryResult.data.totalHits;
