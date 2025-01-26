@@ -27,13 +27,13 @@ const currentQuery = {
 const formSubmitHandler = async event => {
     event.preventDefault();
     const query = searchForm.query.value;
-    currentQuery.query = query;
+    currentQuery.query = query.trim();
     currentQuery.page = 1;
     gallery.innerHTML = "";
     loader.classList.remove("el-hidden");
     loadMore.classList.add("el-hidden");
     try {
-        if (query == "")
+        if (currentQuery.query == "")
         {
             throw new Error("Search query input cannot be empty.");
         }
